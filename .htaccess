@@ -1,0 +1,17 @@
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    #################################
+    # api.hunlux.hu/mojang/hasPaid/ #
+    #################################
+    RewriteRule ^mojang/hasPaid$ hasPaid.php [QSA]
+    RewriteRule ^mojang/hasPaid/([a-zA-Z0-9_-]+)$ hasPaid.php?username=$1 [QSA]
+    RewriteRule ^mojang/hasPaid/$ hasPaid.php [QSA]
+    RewriteRule ^mojang/hasPaid/([a-zA-Z0-9_-]+)/$ hasPaid.php?username=$1 [QSA]
+    #################################
+</IfModule>
